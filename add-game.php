@@ -1,16 +1,16 @@
 <?php
  
   // Read values from the form
-  $game_name = $_POST['GameName'];
-  $game_description = $_POST['GameDescription'];
-  $game_release_date = $_POST['DateReleased'];
-  $game_rating = $_POST['GameRating'];
+  $game_name = $_POST['game_name'];
+  $game_description = $_POST['game_description'];
+  $game_release_date = $_POST['released_date'];
+  $game_rating = $_POST['rating'];
  
   // Connect to database
   include("db.php");
  
   // Build SQL statement
-  $sql = "INSERT INTO videogames(game_name, game_description, released_date, rating)
+  $sql = "INSERT INTO games(game_name, game_description, released_date, rating)
           VALUE('{$game_name}', '{$game_description}', '{$game_release_date}', '{$game_rating}')";
  
   // Run SQL statement and report errors
@@ -19,5 +19,5 @@
   }
  
   // Redirect to list
-  header("location: list-games.php");
+  header("location: list-game.php");
 ?>

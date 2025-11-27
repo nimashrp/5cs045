@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -9,27 +8,26 @@
   </head>
   <body>
     <div class="container">
-
-      <h1>Add a games</h1>
+      <h1>Add a videogame</h1>
       <form action="add-game.php" method="post">
         <div class="mb-3">
-          <label for="GameName" class="form-label">Game name</label>
-          <input type="text" class="form-control" id="GameName" name="GameName">
+          <label for="game_name" class="form-label">Game name</label>
+          <input type="text" class="form-control" id="game_name" name="game_name">
         </div>
         <div class="mb-3">
-          <label for="GameDescription" class="form-label">Description</label>
-          <textarea class="form-control" id="GameDescription" name="GameDescription" rows="5"></textarea>
+          <label for="game_description" class="form-label">Description</label>
+          <textarea class="form-control" id="game_description" name="game_description" rows="5"></textarea>
         </div>
         <div class="mb-3">
-          <label for="DateReleased" class="form-label">Date released</label>
-          <input type="date" class="form-control" id="DateReleased" name="DateReleased">
+          <label for="released_date" class="form-label">Date released</label>
+          <input type="date" class="form-control" id="released_date" name="released_date">
         </div>  
         <div class="mb-3">
-          <label for="GameRating" class="form-label">Rating</label>
-          <input type="number" class="form-control" id="GameRating" name="GameRating">
+          <label for="rating" class="form-label">Rating</label>
+          <input type="number" class="form-control" id="rating" name="rating">
         </div>        
         <input type="submit" class="btn btn-primary" value="Add game">
       </form>
     </div>
   </body>
-</html>    
+</html>   

@@ -21,9 +21,9 @@
         <tr>
           <td><a href="books.php?id=<?=$a_row['book_id']?>"><?=$a_row['book_name']?></a></td>
           <td><?=$a_row['price']?></td>
-		  <td><?=$a_row['description']?></td>
-           <td><?=$a_row['released_date']?></td>
-         </tr>
+		  <td><?=$a_row['book_genre']?></td>
+          <td><?=$a_row['released_date']?></td>
+        </tr>
             
       <?php endwhile;?>
     </table>
