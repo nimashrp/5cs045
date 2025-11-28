@@ -26,12 +26,14 @@ $result = $mysqli->query($sql);
   </div>
 
   <!-- AJAX Search -->
-  <div class="mb-5">
-    <h3>Search Games</h3>
-    <form action="search-game.php" method="post">
-      <input type="text" name="keywords" placeholder="Search">
-      <input type="submit" value="Go!">
-    </form>
+<div class="mb-5">
+
+
+ 
+
+  <ul id="results" class="list-group mt-2"></ul>
+</div>
+
 
   <!-- Latest Games -->
   <h3>Latest Added Games</h3>
@@ -63,30 +65,27 @@ $result = $mysqli->query($sql);
 
 <!-- AJAX Search Script -->
 <script>
-document.getElementById("searchBox").addEventListener("keyup", function() {
-    let keywords = this.value.trim();
-    let resultsBox = document.getElementById("results");
-    resultsBox.innerHTML = '';
+<scri src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-    if(keywords === '') return;
+    <style>
+        table { border-collapse: collapse; margin-top: 15px; }
+        th, td { padding: 10px; }
+        #results { margin-top: 20px; }
+        input { padding: 10px; width: 300px; }
+    </style>
+</head>
 
-    fetch('ajax.php?search=' + encodeURIComponent(keywords))
-    .then(response => response.json())
-    .then(data => {
-        if(data.length === 0){
-            resultsBox.innerHTML = '<li class="list-group-item text-muted">No results found</li>';
-        } else {
-            data.forEach(game => {
-                let li = document.createElement('li');
-                li.className = 'list-group-item';
-                li.textContent = game.game_name;
-                resultsBox.appendChild(li);
-            });
-        }
-    })
-    .catch(err => console.error('Error fetching search results:', err));
-});
+<body>
+
+<h1>AJAX Game Search</h1>
+
+<input type="text" id="keywords" placeholder="Search games...">
+
+<div id="results">Loading...</div>
+
+
 </script>
+
 
 </body>
 </html>

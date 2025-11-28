@@ -4,7 +4,7 @@ include("db.php");
 // Get ID from URL
 $id = $_GET['id'];
 
-// Load this game's data
+// Load existing game data
 $sql = "SELECT * FROM games WHERE game_id = {$id}";
 $result = mysqli_query($mysqli, $sql);
 $row = mysqli_fetch_assoc($result);
@@ -13,21 +13,21 @@ $row = mysqli_fetch_assoc($result);
 <h1>Edit Game</h1>
 
 <form action="update-game.php" method="post">
-
-  <!-- Hidden field so we know which game to update -->
+  
+  <!-- Hidden field to send ID -->
   <input type="hidden" name="id" value="<?=$row['game_id']?>">
 
-  <label>Game Name:</label><br>
-  <input type="text" name="game_name" value="<?=$row['game_name']?>"><br><br>
+  <label>Game Name:</label>
+  <input type="text" name="game_name" value="<?=$row['game_name']?>"><br>
 
-  <label>Description:</label><br>
-  <textarea name="game_description"><?=$row['game_description']?></textarea><br><br>
+  <label>Description:</label>
+  <textarea name="game_description"><?=$row['game_description']?></textarea><br>
 
-  <label>Release Date:</label><br>
-  <input type="date" name="released_date" value="<?=$row['released_date']?>"><br><br>
+  <label>Release Date:</label>
+  <input type="date" name="released_date" value="<?=$row['released_date']?>"><br>
 
-  <label>Rating:</label><br>
-  <input type="number" name="rating" value="<?=$row['rating']?>"><br><br>
+  <label>Rating:</label>
+  <input type="number" name="rating" value="<?=$row['rating']?>"><br>
 
   <button type="submit">Update Game</button>
 
